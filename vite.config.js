@@ -1,3 +1,3 @@
 export default {
-  base: '/umap-umap-viewer-site/',
+  base: '/umap-umap-viewer-results/',
 }
