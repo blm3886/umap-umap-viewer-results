@@ -38,7 +38,7 @@ Object.keys(geneList).forEach(gene => {
       console.error("No file found for gene:", gene);
       return;
     }
-    fetch(`/umap-umap-viewer-site/Expression_per_Cluster/${fileName}`)
+    fetch(`/umap-umap-viewer-results/Expression_per_Cluster/${fileName}`)
       .then(r => r.json())
       .then(data => {
         renderHeatmap(gene, data);
@@ -48,7 +48,7 @@ Object.keys(geneList).forEach(gene => {
     const umapFile = `${mgId}_umap3d.json`;
     console.log("UMAP FILE TO BE READ",umapFile)
     const testumapFIle = `MG_0450_umap3d.json`;
-    fetch(`/umap-umap-viewer-site/perMacrogene_UMAPP_CSV/${testumapFIle}`)
+    fetch(`/umap-umap-viewer-results/perMacrogene_UMAPP_CSV/${testumapFIle}`)
         .then(r => r.json())
         .then(umapData => {renderUMAPP(mgId, umapData), renderClusterFrequenciesAccordion(umapData)});
     };
